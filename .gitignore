@@ -47,6 +47,13 @@
 /web/themes/README.txt
 /web/sites/README.txt
 
+# Ignore contributed modules and themes (managed by Composer)
+/web/modules/contrib
+/web/profiles/contrib
+/web/themes/contrib
+# Keep custom modules
+!web/modules/custom/
+
 # Ignore miscellaneous hidden configuration files
 /web/.csslintrc
 /web/.editorconfig
