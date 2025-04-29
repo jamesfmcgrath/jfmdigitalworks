@@ -16,20 +16,36 @@
 /web/sites/*/tmp
 /web/sites/*/cache
 
-# Ignore core, vendor, and contributed dependencies managed by Composer
+# Ignore core and contributed dependencies managed by Composer
 /web/core/
 /web/vendor/
 /vendor/
 
-# Ignore default files created by Drupal or Composer
+# Ignore vendor executables
+/composer.phar
+/drush.phar
+/robo.phar
+/drupal.phar
+
+# Ignore default files created by Drupal
 /web/autoload.php
-/web/composer.json
-/web/composer.lock
 /web/index.php
 /web/robots.txt
 /web/update.php
 /web/web.config
 /web/example.gitignore
+
+# Ignore example and readme files
+/web/sites/example.settings.local.php
+/web/sites/example.sites.php
+/web/sites/development.services.yml
+/web/README.txt
+/web/LICENSE.txt
+/web/INSTALL.txt
+/web/modules/README.txt
+/web/profiles/README.txt
+/web/themes/README.txt
+/web/sites/README.txt
 
 # Ignore miscellaneous hidden configuration files
 /web/.csslintrc
@@ -40,31 +56,7 @@
 /web/.htaccess
 /web/.ht.router.php
 
-# Ignore example and readme files
-/web/sites/example.settings.local.php
-/web/sites/example.sites.php
-/web/sites/development.services.yml
-/web/README.txt
-/web/LICENSE.txt
-/web/INSTALL.txt
-
-# Ignore module, profile, and theme placeholder files
-/web/modules/README.txt
-/web/profiles/README.txt
-/web/themes/README.txt
-/web/sites/README.txt
-
-# Ignore Drush and Robo executables if stored locally
-/drush.phar
-/drush
-/robo.phar
-/robo
-/composer.phar
-/composer
-/drupal.phar
-/drupal
-
-# Optional: Ignore your IDE/editor settings (uncomment if needed)
+# Optional: Ignore local settings and IDE/editor configurations
 /.idea/
 /.vscode/
 /*.sublime-workspace
