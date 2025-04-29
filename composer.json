@@ -19,6 +19,8 @@
         "drupal/core-composer-scaffold": "^11.1",
         "drupal/core-project-message": "^11.1",
         "drupal/core-recommended": "^11.1",
+        "drupal/pathauto": "^1.13",
+        "drupal/token": "^1.15",
         "drush/drush": "^13.6"
     },
     "conflict": {
