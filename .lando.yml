@@ -2,7 +2,13 @@ name: jfmdigitalworks
 recipe: drupal10
 config:
   webroot: web
+  php: '8.3'
+services:
+  database:
+    type: mariadb:10.11
+  appserver:
+    type: php:8.3
 tooling:
   drush:
     service: appserver
-    cmd: /bin/sh -c "drush --root=$LANDO_WEBROOT --uri=https://$LANDO_APP_NAME.lndo.site $@" "$0"
+    cmd: drush --root=/app/web --uri=https://${LANDO_APP_NAME}.lndo.site "$@"
