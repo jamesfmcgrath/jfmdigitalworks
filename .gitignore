@@ -1,36 +1,37 @@
-# gitignore template for Drupal 8 projects
-#
-# earlier versions of Drupal are tracked in `community/PHP/`
-#
-# follows official upstream conventions:
-# https://www.drupal.org/docs/develop/using-composer
+# Drupal 11 .gitignore
+# Based on best practices from https://www.drupal.org/docs/develop/using-composer
 
-# Ignore configuration files that may contain sensitive information
+# Ignore sensitive settings
 /web/sites/*/*settings*.php
 /web/sites/*/*services*.yml
 
-# Ignore paths that may contain user-generated content
+# Ignore public and private file directories
 /web/sites/*/files
-/web/sites/*/public
-/web/sites/*/private
 /web/sites/*/files-public
 /web/sites/*/files-private
+/web/sites/*/private
 
-# Ignore paths that may contain temporary files
+# Ignore temporary and cache directories
 /web/sites/*/translations
 /web/sites/*/tmp
 /web/sites/*/cache
 
-# Ignore drupal core (if not versioning drupal sources)
-/web/vendor
-/web/core
-/web/modules/README.txt
-/web/profiles/README.txt
-/web/sites/development.services.yml
-/web/sites/example.settings.local.php
-/web/sites/example.sites.php
-/web/sites/README.txt
-/web/themes/README.txt
+# Ignore core, vendor, and contributed dependencies managed by Composer
+/web/core/
+/web/vendor/
+/vendor/
+
+# Ignore default files created by Drupal or Composer
+/web/autoload.php
+/web/composer.json
+/web/composer.lock
+/web/index.php
+/web/robots.txt
+/web/update.php
+/web/web.config
+/web/example.gitignore
+
+# Ignore miscellaneous hidden configuration files
 /web/.csslintrc
 /web/.editorconfig
 /web/.eslintignore
@@ -38,25 +39,37 @@
 /web/.gitattributes
 /web/.htaccess
 /web/.ht.router.php
-/web/autoload.php
-/web/composer.json
-/web/composer.lock
-/web/example.gitignore
-/web/index.php
-/web/INSTALL.txt
-/web/LICENSE.txt
-/web/README.txt
-/web/robots.txt
-/web/update.php
-/web/web.config
 
-# Ignore vendor dependencies and scripts
-/vendor
-/composer.phar
-/composer
-/robo.phar
-/robo
+# Ignore example and readme files
+/web/sites/example.settings.local.php
+/web/sites/example.sites.php
+/web/sites/development.services.yml
+/web/README.txt
+/web/LICENSE.txt
+/web/INSTALL.txt
+
+# Ignore module, profile, and theme placeholder files
+/web/modules/README.txt
+/web/profiles/README.txt
+/web/themes/README.txt
+/web/sites/README.txt
+
+# Ignore Drush and Robo executables if stored locally
 /drush.phar
 /drush
+/robo.phar
+/robo
+/composer.phar
+/composer
 /drupal.phar
 /drupal
+
+# Optional: Ignore your IDE/editor settings (uncomment if needed)
+/.idea/
+/.vscode/
+/*.sublime-workspace
+/*.sublime-project
+
+# Optional: Ignore OS or system files
+.DS_Store
+Thumbs.db

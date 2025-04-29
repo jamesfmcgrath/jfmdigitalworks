@@ -1,0 +1,37 @@
+# Drupal 11 .gitattributes
+# Standard text files
+*.php text
+*.module text
+*.inc text
+*.install text
+*.theme text
+*.txt text
+*.md text
+*.yml text
+*.yaml text
+*.twig text
+*.css text
+*.scss text
+*.js text
+*.json text
+*.xml text
+*.html text
+
+# Ensure consistent end of line handling
+* text=auto
+
+# Exclude certain files from export-archives (e.g., via git archive)
+# If you ever use `git archive` to package releases
+/web/core export-ignore
+/vendor export-ignore
+/web/vendor export-ignore
+/.gitignore export-ignore
+/.gitattributes export-ignore
+/README.md export-ignore
+/web/sites/example.settings.local.php export-ignore
+/web/sites/example.sites.php export-ignore
+/web/sites/development.services.yml export-ignore
+/web/example.gitignore export-ignore
+
+# Optional: Ignore hidden files from exports
+.* export-ignore
