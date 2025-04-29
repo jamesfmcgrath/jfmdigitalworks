@@ -1,5 +1,5 @@
 name: jfmdigitalworks
-recipe: drupal11
+recipe: drupal10
 config:
   webroot: web
 tooling:
