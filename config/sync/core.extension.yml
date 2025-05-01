@@ -39,7 +39,6 @@ module:
   redirect: 0
   role_delegation: 0
   schema_metatag: 0
-  search: 0
   search_api: 0
   search_api_db: 0
   shortcut: 0
