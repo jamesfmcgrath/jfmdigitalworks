@@ -1,18 +1,19 @@
-uuid: fb30acb0-379a-4d85-9381-3ee433eab8a4
+uuid: d0d1c64b-c785-4e24-9885-2d897d75745e
 langcode: en
-status: false
+status: true
 dependencies: {  }
-id: development
-label: Development
+id: local
+label: Local
 description: ''
 weight: 0
 stackable: false
 no_patching: false
 storage: folder
-folder: ../config/splits/development
+folder: ../config/splits/local
 module:
   dblog: 0
   devel: 0
+  stage_file_proxy: 0
   ctools: 0
   ctools_block: 0
   ctools_views: 0
