@@ -9,7 +9,6 @@ module:
   block: 0
   block_content: 0
   breakpoint: 0
-  captcha: 0
   ckeditor5: 0
   comment: 0
   config: 0
@@ -37,7 +36,6 @@ module:
   path: 0
   path_alias: 0
   permissions_by_term: 0
-  recaptcha: 0
   redirect: 0
   role_delegation: 0
   schema_metatag: 0
@@ -55,7 +53,6 @@ module:
   update: 0
   user: 0
   views_ui: 0
-  webform: 0
   menu_admin_per_menu: 1
   pathauto: 1
   views: 10

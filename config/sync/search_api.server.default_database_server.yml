@@ -1,0 +1,15 @@
+uuid: f938c06b-f858-4ace-a669-a5ebdb32f19f
+langcode: en
+status: true
+dependencies:
+  module:
+    - search_api_db
+id: default_database_server
+name: 'Default Database Server'
+description: ''
+backend: search_api_db
+backend_config:
+  database: 'default:default'
+  min_chars: 1
+  matching: words
+  phrase: bigram
