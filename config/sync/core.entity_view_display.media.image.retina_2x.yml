@@ -1,26 +1,27 @@
-uuid: c84fa86d-957e-4877-84f8-1f1870cc8b99
+uuid: f423eef6-7803-42b9-95b0-6106e543ae9e
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.media.retina_2x
     - field.field.media.image.field_media_image
-    - image.style.medium_300x300
+    - image.style.retina_2x
     - media.type.image
   module:
     - image
 _core:
   default_config_hash: 73xaTNkI5J6sfFcBmNYeuk070X3mQS_iwwWaPYyfG2M
-id: media.image.default
+id: media.image.retina_2x
 targetEntityType: media
 bundle: image
-mode: default
+mode: retina_2x
 content:
   field_media_image:
     type: image
     label: visually_hidden
     settings:
       image_link: ''
-      image_style: medium_300x300
+      image_style: retina_2x
       image_loading:
         attribute: lazy
     third_party_settings: {  }

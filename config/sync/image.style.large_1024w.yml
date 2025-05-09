@@ -1,0 +1,21 @@
+uuid: aa0997f7-7008-4416-bbc5-dd2c0ba1de29
+langcode: en
+status: true
+dependencies: {  }
+name: large_1024w
+label: 'Large Responsive (1024)'
+effects:
+  df01d4c8-ddbc-43a6-b9b2-9d89b1a47cfd:
+    uuid: df01d4c8-ddbc-43a6-b9b2-9d89b1a47cfd
+    id: image_scale
+    weight: 1
+    data:
+      width: 1024
+      height: null
+      upscale: false
+  b1f26186-cf8c-4510-b2a0-9a82798a3e27:
+    uuid: b1f26186-cf8c-4510-b2a0-9a82798a3e27
+    id: image_convert
+    weight: 2
+    data:
+      extension: webp

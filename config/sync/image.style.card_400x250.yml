@@ -1,0 +1,21 @@
+uuid: fd016de2-9b08-44dc-938f-f6627be2dcf4
+langcode: en
+status: true
+dependencies: {  }
+name: card_400x250
+label: 'Card (400x250)'
+effects:
+  61d6c94c-cb2e-4f5b-9cd1-f64295f0d806:
+    uuid: 61d6c94c-cb2e-4f5b-9cd1-f64295f0d806
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 400
+      height: 250
+      anchor: center-center
+  ad8d9d10-4d65-4c0c-9706-acd7c8c4b9e5:
+    uuid: ad8d9d10-4d65-4c0c-9706-acd7c8c4b9e5
+    id: image_convert
+    weight: 2
+    data:
+      extension: webp

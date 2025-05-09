@@ -1,0 +1,21 @@
+uuid: 34869f17-798a-4cb4-a17c-39a1a6c5c2ee
+langcode: en
+status: true
+dependencies: {  }
+name: small_400w
+label: 'Small Responsive (400)'
+effects:
+  ee752a8a-82e9-450e-9a02-a8bfb527076f:
+    uuid: ee752a8a-82e9-450e-9a02-a8bfb527076f
+    id: image_scale
+    weight: 1
+    data:
+      width: 400
+      height: null
+      upscale: false
+  aa6b2fc4-d8ed-40d0-ac60-2c7a42c2c58e:
+    uuid: aa6b2fc4-d8ed-40d0-ac60-2c7a42c2c58e
+    id: image_convert
+    weight: 2
+    data:
+      extension: webp

@@ -1,26 +1,27 @@
-uuid: c84fa86d-957e-4877-84f8-1f1870cc8b99
+uuid: 289b9a1b-5e90-4ed8-8fa2-c933e43af1f5
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.media.small
     - field.field.media.image.field_media_image
-    - image.style.medium_300x300
+    - image.style.small_400w
     - media.type.image
   module:
     - image
 _core:
   default_config_hash: 73xaTNkI5J6sfFcBmNYeuk070X3mQS_iwwWaPYyfG2M
-id: media.image.default
+id: media.image.small
 targetEntityType: media
 bundle: image
-mode: default
+mode: small
 content:
   field_media_image:
     type: image
     label: visually_hidden
     settings:
       image_link: ''
-      image_style: medium_300x300
+      image_style: small_400w
       image_loading:
         attribute: lazy
     third_party_settings: {  }

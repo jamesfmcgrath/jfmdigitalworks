@@ -2,6 +2,13 @@ uuid: 493dad48-35f4-4d4e-b6cc-80626ded5f8d
 langcode: en
 status: true
 dependencies:
+  config:
+    - core.entity_view_mode.media.card
+    - core.entity_view_mode.media.hero
+    - core.entity_view_mode.media.large
+    - core.entity_view_mode.media.medium
+    - core.entity_view_mode.media.retina_2x
+    - core.entity_view_mode.media.small
   module:
     - editor
     - media
@@ -57,7 +64,14 @@ filters:
     weight: 100
     settings:
       default_view_mode: default
-      allowed_view_modes: {  }
+      allowed_view_modes:
+        default: default
+        card: card
+        hero: hero
+        large: large
+        medium: medium
+        retina_2x: retina_2x
+        small: small
       allowed_media_types:
         image: image
         remote_video: remote_video

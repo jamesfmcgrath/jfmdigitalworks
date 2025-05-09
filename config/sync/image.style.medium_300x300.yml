@@ -1,0 +1,21 @@
+uuid: 63e98c03-2ce4-459d-9c95-33370e604113
+langcode: en
+status: true
+dependencies: {  }
+name: medium_300x300
+label: 'Medium (300x300)'
+effects:
+  1fa4eea8-f255-48c3-ba78-901be3a68291:
+    uuid: 1fa4eea8-f255-48c3-ba78-901be3a68291
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 300
+      height: 300
+      anchor: center-center
+  49ae9952-a45c-46a4-9481-c228e4898114:
+    uuid: 49ae9952-a45c-46a4-9481-c228e4898114
+    id: image_convert
+    weight: 2
+    data:
+      extension: webp

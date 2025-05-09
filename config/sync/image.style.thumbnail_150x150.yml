@@ -1,0 +1,21 @@
+uuid: c96ebfba-fbb3-406d-867c-b5162b873b25
+langcode: en
+status: true
+dependencies: {  }
+name: thumbnail_150x150
+label: 'Thumbnail (150x150)'
+effects:
+  ab035716-3b61-4b58-beb5-cd36a55e40ba:
+    uuid: ab035716-3b61-4b58-beb5-cd36a55e40ba
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 150
+      height: 150
+      anchor: center-center
+  de6e5a32-07dd-49f8-9ea8-6005125e8cc2:
+    uuid: de6e5a32-07dd-49f8-9ea8-6005125e8cc2
+    id: image_convert
+    weight: 2
+    data:
+      extension: webp

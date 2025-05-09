@@ -1,0 +1,11 @@
+uuid: d6e3ce8e-fd52-485b-a1cc-18114d5a6c5c
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.retina_2x
+label: 'Retina 2X'
+description: ''
+targetEntityType: media
+cache: true

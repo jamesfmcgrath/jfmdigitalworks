@@ -1,0 +1,21 @@
+uuid: 25c842c2-236d-413d-9359-4ae858bc5a1c
+langcode: en
+status: true
+dependencies: {  }
+name: hero_1600x600
+label: 'Hero Banner (1600x600)'
+effects:
+  e8b321aa-dca9-4dcb-ba31-4ba2a6d5fbc3:
+    uuid: e8b321aa-dca9-4dcb-ba31-4ba2a6d5fbc3
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 1600
+      height: 600
+      anchor: center-center
+  e3b1d69f-50d0-44a5-bbe4-1a1b4b35fa5a:
+    uuid: e3b1d69f-50d0-44a5-bbe4-1a1b4b35fa5a
+    id: image_convert
+    weight: 2
+    data:
+      extension: webp

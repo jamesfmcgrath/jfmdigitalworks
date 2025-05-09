@@ -1,0 +1,21 @@
+uuid: 8ceede07-c629-4ef2-a19c-f2adc142f2c7
+langcode: en
+status: true
+dependencies: {  }
+name: retina_2x
+label: 'Retina Double Size (2048)'
+effects:
+  2cf705ac-e206-4b1e-accb-c632a649a4e2:
+    uuid: 2cf705ac-e206-4b1e-accb-c632a649a4e2
+    id: image_scale
+    weight: 1
+    data:
+      width: 2048
+      height: null
+      upscale: false
+  3ca61c1b-b1ad-4f59-b935-8310eda4520c:
+    uuid: 3ca61c1b-b1ad-4f59-b935-8310eda4520c
+    id: image_convert
+    weight: 2
+    data:
+      extension: webp
