@@ -3966,7 +3966,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/jamesfmcgrath/jfm_theme.git",
-                "reference": "a5be033c60ec99c4f6cfc3fa407965b4a5ed4007"
+                "reference": "8978dcbd94dc994eb1aed0c28e4476bcc93d741c"
             },
             "default-branch": true,
             "type": "drupal-theme",
@@ -3977,7 +3977,7 @@
                 "MIT"
             ],
             "description": "A custom Drupal 11 theme using Tailwind CSS and Gulp.",
-            "time": "2025-05-15T19:05:19+00:00"
+            "time": "2025-05-15T19:56:31+00:00"
         },
         {
             "name": "laravel/prompts",

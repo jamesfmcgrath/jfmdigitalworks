@@ -1,0 +1,12 @@
+uuid: 0a35ed6c-0f6f-462f-b533-6ce28a37ba49
+langcode: en
+status: true
+dependencies: {  }
+id: general_inquiries
+label: 'General Inquiries'
+recipients:
+  - contact@jfmdigitalworks.com
+reply: ''
+weight: 0
+message: 'Thank you for contacting us. We will be in touch soon.'
+redirect: ''
