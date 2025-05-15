@@ -6,3 +6,8 @@ tooling:
   drush:
     service: appserver
     cmd: /bin/sh -c "drush --root=$LANDO_WEBROOT --uri=https://$LANDO_APP_NAME.lndo.site $@" "$0"
+services:
+  appserver:
+    overrides:
+      volumes:
+        - /Users/jamesmcgrath/Projects/jfm_theme:/app/web/themes/contrib/jfm_theme
