@@ -72,3 +72,7 @@
 # Optional: Ignore OS or system files
 .DS_Store
 Thumbs.db
+/web/themes/contrib/jfm_theme/
+/web/themes/contrib/jfm_theme/
+/node_modules/
+

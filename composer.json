@@ -12,6 +12,10 @@
         {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/jamesfmcgrath/jfm_theme.git"
         }
     ],
     "require": {
@@ -39,7 +43,8 @@
         "drupal/stage_file_proxy": "^3.1",
         "drupal/token": "^1.15",
         "drupal/webform": "^6.3@beta",
-        "drush/drush": "^13.6"
+        "drush/drush": "^13.6",
+        "jamesfmcgrath/jfm_theme": "dev-main"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -122,5 +127,9 @@
                 "      composer remove drupal/core-project-message"
             ]
         }
+    },
+    "scripts": {
+        "post-install-cmd": [],
+        "post-update-cmd": []
     }
 }

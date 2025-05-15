@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a06a4d6ba97a5e96ad2ed5a6c6478355",
+    "content-hash": "f34e66841942c9eaa4af41aa6507cd4f",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3959,6 +3959,25 @@
                 }
             ],
             "time": "2025-03-27T12:30:47+00:00"
+        },
+        {
+            "name": "jamesfmcgrath/jfm_theme",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jamesfmcgrath/jfm_theme.git",
+                "reference": "a5be033c60ec99c4f6cfc3fa407965b4a5ed4007"
+            },
+            "default-branch": true,
+            "type": "drupal-theme",
+            "extra": {
+                "installer-name": "jfm_theme"
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "A custom Drupal 11 theme using Tailwind CSS and Gulp.",
+            "time": "2025-05-15T19:05:19+00:00"
         },
         {
             "name": "laravel/prompts",
@@ -7931,7 +7950,8 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "drupal/webform": 10
+        "drupal/webform": 10,
+        "jamesfmcgrath/jfm_theme": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
