@@ -1,4 +1,3 @@
-
 .PHONY: theme watch cr export
 
 theme:
@@ -16,3 +15,21 @@ cr:
 export:
 	@echo "📦 Exporting Drupal configuration..."
 	lando drush cex -y
+
+devlink:
+	@echo "🔗 Symlinking theme for local development..."
+	./devlink.sh
+
+unlink:
+	@echo "❌ Removing theme symlink..."
+	rm -rf web/themes/contrib/jfm_theme
+	@echo "✅ Symlink removed."
+
+refresh:
+	@echo "🔄 Pulling latest theme version from Git and updating via Lando Composer..."
+	lando composer update jamesfmcgrath/jfm_theme
+	@echo "✅ Theme updated via Composer."
+
+watch-dev:
+	@echo "👀 Starting Tailwind watcher from local theme repo..."
+	cd ~/Projects/jfm_theme && npm run watch
