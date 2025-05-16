@@ -72,3 +72,10 @@
 # Optional: Ignore OS or system files
 .DS_Store
 Thumbs.db
+*.sql
+*.zip
+*.tar
+*.tar.gz
+*.tar.bz2
+*.tar.xz
+*.tar.lzma
