@@ -1,0 +1,6 @@
+services:
+  styleguide.controller:
+    class: Drupal\styleguide\Controller\StyleGuideController
+    arguments: []
+    tags:
+      - { name: controller.service_arguments }

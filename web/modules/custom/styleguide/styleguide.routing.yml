@@ -1,0 +1,7 @@
+unfussy.styleguide:
+  path: "/styleguide"
+  defaults:
+    _controller: '\Drupal\styleguide\Controller\StyleGuideController::view'
+    _title: "Style Guide"
+  requirements:
+    _permission: "access content"

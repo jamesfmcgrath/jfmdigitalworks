@@ -1,0 +1,22 @@
+uuid: 9be3ff18-1c14-4747-8a39-d3a3242384f0
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - unfussy
+_core:
+  default_config_hash: erQSEZF2XUjNmgTl0uNRBzmg18ZGXwUcw2FhApoeuHk
+id: unfussy_content
+theme: unfussy
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

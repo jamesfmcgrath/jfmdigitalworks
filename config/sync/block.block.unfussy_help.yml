@@ -1,0 +1,22 @@
+uuid: 12d664f9-0335-4f0a-91ad-5efefa2dfdcd
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - unfussy
+_core:
+  default_config_hash: VfPFqqxfkomud5CO8DUijw85QIl9GIxh_nIxLOYESxg
+id: unfussy_help
+theme: unfussy
+region: header
+weight: 0
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  label_display: '0'
+  provider: help
+visibility: {  }

@@ -1,0 +1,6 @@
+name: Unfussy Style Guide
+type: module
+description: "Provides a /styleguide page for the Unfussy theme."
+core_version_requirement: ^11
+package: Custom
+dependencies: []

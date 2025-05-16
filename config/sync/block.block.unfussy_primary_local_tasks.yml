@@ -1,0 +1,22 @@
+uuid: adc33633-22ad-4eb0-b71d-ffdf6fe34959
+langcode: en
+status: true
+dependencies:
+  theme:
+    - unfussy
+_core:
+  default_config_hash: nGE3EoPQQaQCuqTUtZgw0-KIzmrqdKDzdNQf2JyPUt4
+id: unfussy_primary_local_tasks
+theme: unfussy
+region: header
+weight: -4
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Primary tabs'
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: false
+visibility: {  }

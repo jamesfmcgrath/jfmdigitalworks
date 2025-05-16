@@ -1,13 +1,15 @@
 name: Unfussy
 type: theme
-description: 'A minimalist, accessible, modern Drupal 11 theme using plain CSS and Single Directory Components.'
+description: "A minimalist, accessible, modern Drupal 11 theme using plain CSS and Single Directory Components."
 core_version_requirement: ^11
 base theme: stable9
 libraries:
   - unfussy/global
 regions:
-  header: 'Header'
-  primary_menu: 'Primary menu'
-  content: 'Content'
-  sidebar: 'Sidebar'
-  footer: 'Footer'
+  header: "Header"
+  primary_menu: "Primary menu"
+  content: "Content"
+  sidebar: "Sidebar"
+  footer: "Footer"
+component libraries:
+  - components/*
