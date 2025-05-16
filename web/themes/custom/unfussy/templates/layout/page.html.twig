@@ -1,15 +1,12 @@
-<header class="site-header">
-  {% if page.header %}
-    {{ page.header }}
+<div class="layout-wrapper">
+  {% if page.sidebar %}
+    <aside class="site-sidebar" role="complementary">
+      {{ page.sidebar }}
+    </aside>
   {% endif %}
-</header>
-
-<main id="main-content" class="site-main">
-  {{ page.content }}
-</main>
-
-<footer class="site-footer">
-  {% if page.footer %}
-    {{ page.footer }}
+  {% if page.content %}
+    <main id="main-content" role="main">
+      {{ page.content }}
+    </main>
   {% endif %}
-</footer>
+</div>

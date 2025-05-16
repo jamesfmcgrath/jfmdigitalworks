@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html{{ html_attributes }}>
+  <head>
+    <head-placeholder token="{{ placeholder_token|raw }}">
+    <title>{{ head_title|safe_join(' | ') }}</title>
+    <css-placeholder token="{{ placeholder_token|raw }}">
+    <js-placeholder token="{{ placeholder_token|raw }}">
+  </head>
+  <body{{ attributes }}>
+    <a href="#main-content" class="visually-hidden focusable skip-link">
+      {{ 'Skip to main content'|t }}
+    </a>
+
+    <header class="site-header">
+      {% if page.header %}
+        {{ page.header }}
+      {% endif %}
+
+      {% if page.primary_menu %}
+        <nav role="navigation" class="site-nav">
+          {{ page.primary_menu }}
+        </nav>
+      {% endif %}
+    </header>
+
+    {% if page.tabs %}
+      <nav role="navigation" class="site-tabs">
+        {{ page.tabs }}
+      </nav>
+    {% endif %}
+
+    {{ page_top }}
+    {{ page }}
+    {{ page_bottom }}
+
+    <footer class="site-footer" role="contentinfo">
+      {% if page.footer %}
+        {{ page.footer }}
+      {% endif %}
+    </footer>
+
+    <js-bottom-placeholder token="{{ placeholder_token|raw }}">
+  </body>
+</html>
