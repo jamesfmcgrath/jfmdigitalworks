@@ -1,0 +1,5 @@
+# Schema for the configuration files of the jfmdw_radix theme.
+
+jfmdw_radix.settings:
+  type: theme_settings
+  label: 'jfmdw_radix settings'
