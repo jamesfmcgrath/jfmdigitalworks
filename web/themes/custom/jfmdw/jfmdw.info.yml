@@ -1,0 +1,13 @@
+name: "JFM Digital Works"
+type: theme
+description: "A custom theme based on the Starterkit theme."
+package: Custom
+base theme: stable9
+core_version_requirement: ^10 || ^11
+
+regions:
+  header: Header
+  primary_menu: "Primary menu"
+  content: Content
+  sidebar: Sidebar
+  footer: Footer
