@@ -60,4 +60,5 @@ module:
 theme:
   olivero: 0
   claro: 0
+  jfmdw: 0
 profile: standard

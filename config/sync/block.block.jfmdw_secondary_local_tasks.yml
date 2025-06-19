@@ -1,0 +1,22 @@
+uuid: f9f87975-f8c4-4b96-bed7-cbc5e8ccf373
+langcode: en
+status: true
+dependencies:
+  theme:
+    - jfmdw
+_core:
+  default_config_hash: ydSxdq7R66I8UMC460rOzlfzvlUL4VRbdwc6z9DWaUI
+id: jfmdw_secondary_local_tasks
+theme: jfmdw
+region: highlighted
+weight: -3
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Secondary tabs'
+  label_display: '0'
+  provider: core
+  primary: false
+  secondary: true
+visibility: {  }

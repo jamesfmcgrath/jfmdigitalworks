@@ -1,0 +1,22 @@
+uuid: 19e556e9-1cee-44da-a1e4-9f2e102ab837
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - jfmdw
+_core:
+  default_config_hash: VfPFqqxfkomud5CO8DUijw85QIl9GIxh_nIxLOYESxg
+id: jfmdw_help
+theme: jfmdw
+region: content_above
+weight: -5
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  label_display: '0'
+  provider: help
+visibility: {  }

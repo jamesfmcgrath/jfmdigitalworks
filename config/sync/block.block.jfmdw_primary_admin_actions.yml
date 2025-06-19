@@ -1,0 +1,20 @@
+uuid: 9fb53bc7-ded6-4d83-8db7-b67f4ecdc919
+langcode: en
+status: true
+dependencies:
+  theme:
+    - jfmdw
+_core:
+  default_config_hash: Q9_2whdOj1YIomfvsIfopROW4FT_X5pY0DjdOiOaQ5U
+id: jfmdw_primary_admin_actions
+theme: jfmdw
+region: highlighted
+weight: -6
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }
