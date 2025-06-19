@@ -1,0 +1,22 @@
+name: JFM Digital Works Theme
+type: theme
+base theme: olivero
+description: A sub-theme of Olivero for JFM Digital Works.
+package: Custom
+core_version_requirement: ^10 || ^11
+libraries:
+  - jfmdw/global
+regions:
+  header: Header
+  primary_menu: Primary menu
+  secondary_menu: Secondary menu
+  hero: Hero (full width)
+  highlighted: Highlighted
+  breadcrumb: Breadcrumb
+  social: Social Bar
+  content_above: Content Above
+  content: Content
+  sidebar: Sidebar
+  content_below: Content Below
+  footer_top: Footer Top
+  footer_bottom: Footer Bottom

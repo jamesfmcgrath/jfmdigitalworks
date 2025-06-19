@@ -1,0 +1,31 @@
+jfmdw.sm:
+  label: Small
+  mediaQuery: "(min-width: 640px)"
+  weight: 0
+  multipliers:
+    - 1x
+    - 2x
+
+jfmdw.md:
+  label: Medium
+  mediaQuery: "(min-width: 768px)"
+  weight: 1
+  multipliers:
+    - 1x
+    - 2x
+
+jfmdw.lg:
+  label: Large
+  mediaQuery: "(min-width: 1024px)"
+  weight: 2
+  multipliers:
+    - 1x
+    - 2x
+
+jfmdw.xl:
+  label: Extra Large
+  mediaQuery: "(min-width: 1280px)"
+  weight: 3
+  multipliers:
+    - 1x
+    - 2x
