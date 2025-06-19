@@ -30,7 +30,7 @@
 		"browser-sync-webpack-plugin": "github:Va1/browser-sync-webpack-plugin",
 		"cross-env": "^7.0.3",
 		"dotenv": "^16.3.1",
-		"drupal-radix-cli": "^1.0.6",
+		"drupal-radix-cli": "^1.0.7",
 		"laravel-mix": "^6.0.18",
 		"laravel-mix-copy-watched": "^2.3.1",
 		"laravel-mix-stylelint": "^1.0.0",
