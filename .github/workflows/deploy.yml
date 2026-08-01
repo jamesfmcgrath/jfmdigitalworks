@@ -74,9 +74,11 @@ jobs:
           SSH_HOST: ${{ secrets.SSH_HOST }}
         run: |
           mkdir -p ~/.ssh
-          printf '%s\n' "$SSH_KEY" > ~/.ssh/deploy_key
+          # Preserve PEM/OpenSSH newlines exactly
+          printenv SSH_KEY > ~/.ssh/deploy_key
           chmod 600 ~/.ssh/deploy_key
-          ssh-keyscan -p "$SSH_PORT" -H "$SSH_HOST" >> ~/.ssh/known_hosts
+          # Hostinger often fails hashed keyscan; accept-new on first connect instead
+          ssh-keyscan -p "$SSH_PORT" "$SSH_HOST" >> ~/.ssh/known_hosts 2>/dev/null || true
 
       - name: Verify destination is writable
         env:
@@ -85,7 +87,7 @@ jobs:
           SSH_USER: ${{ secrets.SSH_USER }}
           DEPLOY_PATH: ${{ secrets.DEPLOY_PATH }}
         run: |
-          ssh -v -i ~/.ssh/deploy_key -o IdentitiesOnly=yes -p "$SSH_PORT" \
+          ssh -i ~/.ssh/deploy_key -o IdentitiesOnly=yes -o StrictHostKeyChecking=accept-new -p "$SSH_PORT" \
             "$SSH_USER@$SSH_HOST" \
             "test -d '$DEPLOY_PATH' && test -w '$DEPLOY_PATH' && echo OK" \
             || (echo "ERROR: Destination does not exist or is not writable"; exit 1)
@@ -99,7 +101,7 @@ jobs:
         run: |
           echo "=== DRY RUN - showing what would change ==="
           rsync -avz --delete --dry-run \
-            -e "ssh -i ~/.ssh/deploy_key -p $SSH_PORT" \
+            -e "ssh -i ~/.ssh/deploy_key -o IdentitiesOnly=yes -o StrictHostKeyChecking=accept-new -p $SSH_PORT" \
             dist/ \
             "$SSH_USER@$SSH_HOST:$DEPLOY_PATH/"
 
@@ -112,6 +114,6 @@ jobs:
           DEPLOY_PATH: ${{ secrets.DEPLOY_PATH }}
         run: |
           rsync -avz --delete \
-            -e "ssh -i ~/.ssh/deploy_key -p $SSH_PORT" \
+            -e "ssh -i ~/.ssh/deploy_key -o IdentitiesOnly=yes -o StrictHostKeyChecking=accept-new -p $SSH_PORT" \
             dist/ \
             "$SSH_USER@$SSH_HOST:$DEPLOY_PATH/"
