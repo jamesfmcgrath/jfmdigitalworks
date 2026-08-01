@@ -1,0 +1,120 @@
+---
+import Logo from './Logo.astro';
+---
+
+<header role="banner" class="fixed top-2 z-30 w-full md:top-6">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <div class="relative flex h-14 items-center justify-between gap-3 rounded-2xl bg-white/90 px-3 shadow-lg shadow-black/[0.03] backdrop-blur-xs before:pointer-events-none before:absolute before:inset-0 before:rounded-[inherit] before:border before:border-transparent before:[background:linear-gradient(var(--color-gray-100),var(--color-gray-200))_border-box] before:[mask-composite:exclude_!important] before:[mask:linear-gradient(white_0_0)_padding-box,_linear-gradient(white_0_0)]">
+      <div class="flex items-center">
+        <Logo />
+      </div>
+
+      <nav role="navigation" aria-label="Main navigation" class="hidden lg:block">
+        <ul class="flex items-center gap-6">
+          <li>
+            <a
+              href="#services"
+              class="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors min-h-[44px] flex items-center"
+            >
+              Services
+            </a>
+          </li>
+          <li>
+            <a
+              href="#portfolio"
+              class="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors min-h-[44px] flex items-center"
+            >
+              Portfolio
+            </a>
+          </li>
+          <li>
+            <a
+              href="#contact"
+              class="btn-sm bg-blue-500 text-white hover:bg-blue-600 transition-colors min-h-[44px] flex items-center"
+            >
+              Contact
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <button
+        type="button"
+        class="lg:hidden flex items-center justify-center w-10 h-10 rounded-md hover:bg-gray-100 transition-colors min-h-[44px] min-w-[44px]"
+        aria-label="Toggle mobile menu"
+        aria-controls="mobile-nav"
+        aria-expanded="false"
+        data-nav-toggle
+      >
+        <span data-nav-icon-open>
+          <svg
+            class="w-5 h-5 text-blue-600"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            ></path>
+          </svg>
+        </span>
+        <span data-nav-icon-close hidden>
+          <svg
+            class="w-5 h-5 text-blue-600"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            ></path>
+          </svg>
+        </span>
+      </button>
+    </div>
+
+    <nav
+      id="mobile-nav"
+      role="navigation"
+      aria-label="Mobile navigation"
+      class="lg:hidden mt-2 rounded-2xl shadow-lg shadow-black/[0.03] backdrop-blur-xs overflow-hidden bg-white/95"
+      data-nav-panel
+      hidden
+    >
+      <div class="px-4 py-3 space-y-3">
+        <a
+          href="#services"
+          class="block text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors py-2 min-h-[44px] flex items-center"
+        >
+          Services
+        </a>
+        <a
+          href="#portfolio"
+          class="block text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors py-2 min-h-[44px] flex items-center"
+        >
+          Portfolio
+        </a>
+        <a
+          href="#contact"
+          class="block text-center btn-sm bg-blue-500 text-white hover:bg-blue-600 transition-colors mt-3 min-h-[44px] flex items-center justify-center"
+        >
+          Contact
+        </a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<script>
+  import { initNav } from '../scripts/nav.ts';
+
+  initNav();
+</script>
