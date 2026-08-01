@@ -23,10 +23,16 @@ pnpm preview
 
 ## Deploy to Hostinger
 
-1. Set `PUBLIC_WEB3FORMS_KEY` in the environment used for `pnpm build`
-2. Run `pnpm build`
-3. Upload contents of `dist/` to the Hostinger document root (`public_html`), including the generated `.htaccess`
-4. Confirm Hostinger allows the `.htaccess` directive `ErrorDocument 404 /404.html`
-5. Confirm `/`, mobile nav, contact submit, and 404
+GitHub Actions workflow (manual): **Actions → Deploy to Hostinger → Run workflow**.
+
+- Defaults to **dry run** (`dry_run=true`). Set `dry_run=false` for a real deploy.
+- Requires repo secrets: `SSH_KEY`, `SSH_HOST`, `SSH_USER`, `SSH_PORT`, `DEPLOY_PATH`, `PUBLIC_WEB3FORMS_KEY`
+- `DEPLOY_PATH` must be `/home/<user>/domains/jfmdigitalworks.com/public_html`
+
+Manual alternative:
+
+1. Set `PUBLIC_WEB3FORMS_KEY` and run `pnpm build`
+2. Upload `dist/` to Hostinger `public_html` (include `.htaccess`)
+3. Confirm `/`, mobile nav, contact submit, and 404
 
 Production builds require `PUBLIC_WEB3FORMS_KEY`; without it, the contact form logs a configuration warning and cannot submit.

@@ -1,0 +1,117 @@
+name: Deploy to Hostinger
+
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Dry run only (no changes made). Type false to perform a real deploy.'
+        required: false
+        default: 'true'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build
+        env:
+          PUBLIC_WEB3FORMS_KEY: ${{ secrets.PUBLIC_WEB3FORMS_KEY }}
+        run: pnpm build
+
+      - name: Verify build output exists
+        run: |
+          if [ ! -d dist ]; then
+            echo "ERROR: dist/ does not exist - refusing to deploy"
+            exit 1
+          fi
+          file_count=$(find dist -type f | wc -l)
+          if [ "$file_count" -eq 0 ]; then
+            echo "ERROR: dist/ is empty - refusing to deploy"
+            exit 1
+          fi
+          echo "Build output looks good ($file_count files):"
+          ls dist/ | head
+
+      - name: Verify deploy path
+        env:
+          DEPLOY_PATH: ${{ secrets.DEPLOY_PATH }}
+        run: |
+          if [ -z "$DEPLOY_PATH" ]; then
+            echo "ERROR: DEPLOY_PATH secret is empty"
+            exit 1
+          fi
+          case "$DEPLOY_PATH" in
+            /home/*/domains/jfmdigitalworks.com/public_html) ;;
+            *)
+              echo "ERROR: DEPLOY_PATH must be exactly /home/USER/domains/jfmdigitalworks.com/public_html"
+              echo "Got: $DEPLOY_PATH"
+              exit 1
+              ;;
+          esac
+          echo "Deploy path looks valid"
+
+      - name: Setup SSH
+        env:
+          SSH_KEY: ${{ secrets.SSH_KEY }}
+          SSH_PORT: ${{ secrets.SSH_PORT }}
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+        run: |
+          mkdir -p ~/.ssh
+          printf '%s\n' "$SSH_KEY" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan -p "$SSH_PORT" -H "$SSH_HOST" >> ~/.ssh/known_hosts
+
+      - name: Verify destination is writable
+        env:
+          SSH_PORT: ${{ secrets.SSH_PORT }}
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+          SSH_USER: ${{ secrets.SSH_USER }}
+          DEPLOY_PATH: ${{ secrets.DEPLOY_PATH }}
+        run: |
+          ssh -v -i ~/.ssh/deploy_key -o IdentitiesOnly=yes -p "$SSH_PORT" \
+            "$SSH_USER@$SSH_HOST" \
+            "test -d '$DEPLOY_PATH' && test -w '$DEPLOY_PATH' && echo OK" \
+            || (echo "ERROR: Destination does not exist or is not writable"; exit 1)
+
+      - name: Dry-run rsync
+        env:
+          SSH_PORT: ${{ secrets.SSH_PORT }}
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+          SSH_USER: ${{ secrets.SSH_USER }}
+          DEPLOY_PATH: ${{ secrets.DEPLOY_PATH }}
+        run: |
+          echo "=== DRY RUN - showing what would change ==="
+          rsync -avz --delete --dry-run \
+            -e "ssh -i ~/.ssh/deploy_key -p $SSH_PORT" \
+            dist/ \
+            "$SSH_USER@$SSH_HOST:$DEPLOY_PATH/"
+
+      - name: Deploy via rsync
+        if: inputs.dry_run == 'false'
+        env:
+          SSH_PORT: ${{ secrets.SSH_PORT }}
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+          SSH_USER: ${{ secrets.SSH_USER }}
+          DEPLOY_PATH: ${{ secrets.DEPLOY_PATH }}
+        run: |
+          rsync -avz --delete \
+            -e "ssh -i ~/.ssh/deploy_key -p $SSH_PORT" \
+            dist/ \
+            "$SSH_USER@$SSH_HOST:$DEPLOY_PATH/"
