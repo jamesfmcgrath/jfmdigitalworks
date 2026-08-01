@@ -43,7 +43,8 @@ Local path: `~/Projects/jfmdigitalworks`
 
 ## Stack
 
-- Astro 5
+- Astro 7
+- Node.js `>=22.12.0` (see `.nvmrc`)
 - TypeScript
 - Tailwind CSS 4 (port existing theme / utility patterns)
 - Vanilla JS modules for interactivity

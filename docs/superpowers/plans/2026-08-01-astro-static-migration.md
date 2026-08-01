@@ -4,9 +4,9 @@
 
 **Goal:** Rebuild the JFM Digital Works marketing homepage as a static Astro site with vanilla JS islands, deployable to Hostinger as `dist/`.
 
-**Architecture:** Astro 5 static site (`output: 'static'`). Markup lives in `.astro` components. Only mobile nav and contact form load client JS (`src/scripts/*.ts` via `<script>`). Styles and content are ported from `~/Projects/jfmdigitalworksv1`. No React, no Next, no AOS, no auth routes.
+**Architecture:** Astro 7 static site (`output: 'static'`). Markup lives in `.astro` components. Only mobile nav and contact form load client JS (`src/scripts/*.ts` via `<script>`). Styles and content are ported from `~/Projects/jfmdigitalworksv1`. No React, no Next, no AOS, no auth routes.
 
-**Tech Stack:** Astro 5, TypeScript, Tailwind CSS 4 (`@tailwindcss/vite`), `@tailwindcss/forms`, `@fontsource-variable/inter`, `@fontsource/fira-code`, Vitest (for form/nav unit tests), pnpm.
+**Tech Stack:** Astro 7, TypeScript, Tailwind CSS 4 (`@tailwindcss/vite`), `@tailwindcss/forms`, `@fontsource-variable/inter`, `@fontsource/fira-code`, Vitest (for form/nav unit tests), pnpm. Node.js `>=22.12.0` (pin via `.nvmrc`).
 
 ## Global Constraints
 

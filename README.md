@@ -2,9 +2,12 @@
 
 Static site built with [Astro](https://astro.build/) and Tailwind CSS.
 
+Requires **Node.js 22+** (see `.nvmrc`; run `nvm use` before install/build).
+
 ## Development
 
 ```bash
+nvm use
 pnpm install
 pnpm dev
 ```

@@ -17,3 +17,6 @@ pnpm-debug.log*
 .idea/
 .vscode/
 *.tsbuildinfo
+
+# git worktrees
+.worktrees/
