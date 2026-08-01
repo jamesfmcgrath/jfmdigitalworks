@@ -35,7 +35,22 @@ export function initNav(root: ParentNode = document): void {
     link.addEventListener('click', close);
   });
 
+  document.addEventListener('click', (event) => {
+    const target = event.target;
+    if (
+      open &&
+      target instanceof Node &&
+      !toggle.contains(target) &&
+      !panel.contains(target)
+    ) {
+      close();
+    }
+  });
+
   document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape') close();
+    if (event.key === 'Escape' && open) {
+      close();
+      toggle.focus();
+    }
   });
 }

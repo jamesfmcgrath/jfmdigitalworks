@@ -8,6 +8,13 @@ export function initContactForm(form: HTMLFormElement): void {
   const submitBtn = form.querySelector<HTMLButtonElement>('[data-contact-submit]');
   if (!status || !submitBtn) return;
 
+  const accessKey = import.meta.env.PUBLIC_WEB3FORMS_KEY;
+  if (!accessKey) {
+    console.warn(
+      'PUBLIC_WEB3FORMS_KEY is missing. The production contact form cannot submit.',
+    );
+  }
+
   const setStatus = (message: string, ok: boolean) => {
     status.hidden = false;
     status.textContent = message;
@@ -35,7 +42,6 @@ export function initContactForm(form: HTMLFormElement): void {
       return;
     }
 
-    const accessKey = import.meta.env.PUBLIC_WEB3FORMS_KEY;
     if (!accessKey) {
       setStatus(
         'Contact form is not properly configured. Please try again later or email hello@jfmdigitalworks.com directly.',
