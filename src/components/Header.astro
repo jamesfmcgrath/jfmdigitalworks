@@ -4,12 +4,12 @@ import Logo from './Logo.astro';
 
 <header role="banner" class="fixed top-2 z-30 w-full md:top-6">
   <div class="mx-auto max-w-6xl px-4 sm:px-6">
-    <div class="relative flex h-14 items-center justify-between gap-3 rounded-2xl bg-white/90 px-3 shadow-lg shadow-black/[0.03] backdrop-blur-xs before:pointer-events-none before:absolute before:inset-0 before:rounded-[inherit] before:border before:border-transparent before:[background:linear-gradient(var(--color-gray-100),var(--color-gray-200))_border-box] before:[mask-composite:exclude_!important] before:[mask:linear-gradient(white_0_0)_padding-box,_linear-gradient(white_0_0)]">
-      <div class="flex items-center">
+    <div class="header-bar relative flex h-14 items-center justify-between gap-3 rounded-2xl bg-white/90 px-3 shadow-lg shadow-black/[0.03] backdrop-blur-xs">
+      <div class="relative z-10 flex items-center">
         <Logo />
       </div>
 
-      <nav role="navigation" aria-label="Main navigation" class="hidden lg:block">
+      <nav role="navigation" aria-label="Main navigation" class="relative z-10 hidden lg:block">
         <ul class="flex items-center gap-6">
           <li>
             <a
@@ -40,7 +40,7 @@ import Logo from './Logo.astro';
 
       <button
         type="button"
-        class="lg:hidden flex items-center justify-center w-10 h-10 rounded-md hover:bg-gray-100 transition-colors min-h-[44px] min-w-[44px]"
+        class="relative z-10 lg:hidden flex items-center justify-center w-10 h-10 rounded-md hover:bg-gray-100 transition-colors min-h-[44px] min-w-[44px]"
         aria-label="Toggle mobile menu"
         aria-controls="mobile-nav"
         aria-expanded="false"

@@ -31,3 +31,22 @@
 [data-scrollspy-link].scrollspy-active {
   @apply text-blue-500 font-medium;
 }
+
+/* Header glass border (Tailwind arbitrary mask-composite is dropped in v4 build) */
+.header-bar::before {
+  content: '';
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 1px solid transparent;
+  background: linear-gradient(var(--color-gray-100), var(--color-gray-200)) border-box;
+  mask:
+    linear-gradient(#fff 0 0) padding-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) padding-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+}
