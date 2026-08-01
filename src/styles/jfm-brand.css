@@ -11,9 +11,9 @@
 :root {
   --jfm-base: #f8fafc;
   --jfm-heading: #1e293b;
-  --jfm-tech-blue: #1a73e8; /* Updated for better contrast */
-  --jfm-tech-blue-light: #4285f4;
-  --jfm-tech-blue-dark: #1557b3; /* Darker for hover */
+  --jfm-tech-blue: #1356ae; /* WCAG AAA 7:1 with white */
+  --jfm-tech-blue-light: #3b82f6;
+  --jfm-tech-blue-dark: #0f4c81; /* Darker for hover / links */
   --jfm-accent: #10b981;
   --jfm-section: #f1f5f9;
 }

@@ -22,13 +22,15 @@
   --color-jfm-light: #f1f5f9;
   --color-jfm-muted: #94a3b8;
 
-  --color-blue-500: #1a73e8;
-  --color-blue-600: #1557b3;
-  --color-blue-400: #4285f4;
+  /* Blues tuned for WCAG AAA (7:1) against white / white text */
+  --color-blue-500: #1356ae;
+  --color-blue-600: #0f4c81;
+  --color-blue-700: #0c3d68;
+  --color-blue-400: #3b82f6;
   --color-blue-300: #6fa8f5;
 
-  --color-accessible-blue: #1a73e8;
-  --color-accessible-blue-hover: #1557b3;
+  --color-accessible-blue: #1356ae;
+  --color-accessible-blue-hover: #0f4c81;
   --color-accessible-text-light: #ffffff;
   --color-accessible-text-dark: #0e1116;
 
