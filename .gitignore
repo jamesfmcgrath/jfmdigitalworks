@@ -1,83 +1,19 @@
-# Drupal 11 .gitignore
-# Based on best practices from https://www.drupal.org/docs/develop/using-composer
+# dependencies
+node_modules/
 
-# Ignore sensitive settings
-/web/sites/*/*settings*.php
-/web/sites/*/*services*.yml
+# build
+dist/
+.astro/
 
-# Ignore public and private file directories
-/web/sites/*/files
-/web/sites/*/files-public
-/web/sites/*/files-private
-/web/sites/*/private
+# env
+.env
+.env.*
+!.env.example
 
-# Ignore temporary and cache directories
-/web/sites/*/translations
-/web/sites/*/tmp
-/web/sites/*/cache
-
-# Ignore core and contributed dependencies managed by Composer
-/web/core/
-/web/vendor/
-/vendor/
-
-# Ignore vendor executables
-/composer.phar
-/drush.phar
-/robo.phar
-/drupal.phar
-
-# Ignore default files created by Drupal
-/web/autoload.php
-/web/index.php
-/web/robots.txt
-/web/update.php
-/web/web.config
-/web/example.gitignore
-
-# Ignore example and readme files
-/web/sites/example.settings.local.php
-/web/sites/example.sites.php
-/web/sites/development.services.yml
-/web/README.txt
-/web/LICENSE.txt
-/web/INSTALL.txt
-/web/modules/README.txt
-/web/profiles/README.txt
-/web/themes/README.txt
-/web/sites/README.txt
-
-# Ignore contributed modules and themes (managed by Composer)
-/web/modules/contrib
-/web/profiles/contrib
-/web/themes/contrib
-# Keep custom modules
-!web/modules/custom/
-
-# Ignore miscellaneous hidden configuration files
-/web/.csslintrc
-/web/.editorconfig
-/web/.eslintignore
-/web/.eslintrc.json
-/web/.gitattributes
-/web/.htaccess
-/web/.ht.router.php
-
-# Optional: Ignore local settings and IDE/editor configurations
-/.idea/
-/.vscode/
-/*.sublime-workspace
-/*.sublime-project
-
-# Optional: Ignore OS or system files
+# logs / OS / IDE
+npm-debug.log*
+pnpm-debug.log*
 .DS_Store
-Thumbs.db
-*.sql
-*.zip
-*.tar
-*.tar.gz
-*.tar.bz2
-*.tar.xz
-*.tar.lzma
-# git worktrees
-.worktrees/
+.idea/
+.vscode/
+*.tsbuildinfo
