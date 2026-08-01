@@ -1,12 +1,8 @@
 ---
-import '../styles/global.css';
+import BaseLayout from '../layouts/BaseLayout.astro';
 ---
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>JFM Digital Works</title>
-  </head>
-  <body class="bg-gray-100 text-gray-800">
-    <h1 class="p-8 text-2xl font-bold">JFM Digital Works</h1>
-  </body>
-</html>
+<BaseLayout>
+  <main id="main-content" role="main" class="grow">
+    <p class="p-8">Layout OK</p>
+  </main>
+</BaseLayout>

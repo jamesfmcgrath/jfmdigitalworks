@@ -1,0 +1,104 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const title =
+  Astro.props.title ??
+  'Fast Web Development for Growing Businesses | JFM Digital Works';
+const description =
+  Astro.props.description ??
+  'Secure, accessible web development with 100+ projects delivered. Drupal, React, WordPress expertise. WCAG compliance guaranteed. Based in Ireland, serving EU. Free discovery call.';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  name: 'JFM Digital Works',
+  description:
+    'Web development, security audits, and accessibility services for enterprise and government',
+  url: 'https://jfmdigitalworks.com',
+  telephone: '+353-87-399-9751',
+  email: 'hello@jfmdigitalworks.com',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Westport',
+    addressRegion: 'County Mayo',
+    addressCountry: 'IE',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 53.8008,
+    longitude: -9.5218,
+  },
+  areaServed: [
+    { '@type': 'Country', name: 'Ireland' },
+    { '@type': 'Country', name: 'United Kingdom' },
+    { '@type': 'Place', name: 'European Union' },
+  ],
+  priceRange: '€€€',
+  knowsAbout: [
+    'Drupal Development',
+    'React Development',
+    'WordPress Development',
+    'Web Accessibility',
+    'WCAG Compliance',
+    'Web Security',
+    'Platform Migration',
+  ],
+  sameAs: [
+    'https://www.linkedin.com/in/james-mcgrath-web-development',
+    'https://github.com/jamesfmcgrath',
+  ],
+};
+---
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta
+      name="keywords"
+      content="web developer Ireland, Drupal developer, accessibility audit, security audit, WCAG compliance, emergency web developer, web development Ireland, Drupal developer Ireland, fix drupal security issues Ireland, migrate drupal 7 to drupal 11, wordpress security audit Ireland"
+    />
+    <link rel="canonical" href="https://jfmdigitalworks.com" />
+    <meta name="theme-color" content="#6366f1" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/images/android-chrome-192x192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/images/android-chrome-512x512.png" />
+    <meta property="og:title" content="Fast Web Development | JFM Digital Works" />
+    <meta
+      property="og:description"
+      content="100+ projects delivered. Drupal, React, WordPress. WCAG compliance. Based in Ireland."
+    />
+    <meta property="og:url" content="https://jfmdigitalworks.com" />
+    <meta property="og:site_name" content="JFM Digital Works" />
+    <meta property="og:locale" content="en_IE" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://jfmdigitalworks.com/images/og-preview.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Fast Web Development | JFM Digital Works" />
+    <meta
+      name="twitter:description"
+      content="100+ projects delivered. Drupal, React, WordPress expertise."
+    />
+    <meta name="twitter:image" content="https://jfmdigitalworks.com/images/og-preview.png" />
+    <link rel="preconnect" href="https://api.web3forms.com" />
+    <link rel="dns-prefetch" href="https://api.web3forms.com" />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </head>
+  <body class="bg-gray-100 font-inter tracking-tight text-gray-800 antialiased">
+    <div class="flex min-h-screen flex-col overflow-hidden supports-[overflow:clip]:overflow-clip">
+      <slot />
+    </div>
+    <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+  </body>
+</html>
