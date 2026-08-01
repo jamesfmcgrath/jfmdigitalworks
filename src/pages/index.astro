@@ -1,8 +1,25 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import CaseStudies from '../components/CaseStudies.astro';
+import Services from '../components/Services.astro';
+import Process from '../components/Process.astro';
+import FinalCta from '../components/FinalCta.astro';
+import Footer from '../components/Footer.astro';
 ---
 <BaseLayout>
+  <a
+    href="#main-content"
+    class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:rounded focus:bg-blue-600 focus:px-4 focus:py-2 focus:text-white focus:outline-none focus:ring-4 focus:ring-blue-300"
+  >
+    Skip to main content
+  </a>
   <main id="main-content" role="main" class="grow">
-    <p class="p-8">Layout OK</p>
+    <Hero />
+    <CaseStudies />
+    <Services />
+    <Process />
+    <FinalCta />
   </main>
+  <Footer />
 </BaseLayout>

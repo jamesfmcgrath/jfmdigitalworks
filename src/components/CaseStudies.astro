@@ -1,0 +1,210 @@
+---
+const projects = [
+  {
+    name: 'Lexington-Fayette Urban Council Government',
+    challenge:
+      'City of 300k+ residents needed multilingual site with significantly improved search functionality',
+    myRole:
+      'Led front-end implementation including accessibility testing, design system integration, and advanced search architecture as part of agency team',
+    results: [
+      'Team earned Gold - 2025 dotCOMM Awards',
+      '140% improvement in site search performance',
+      'Multi-language support delivered',
+      'Full WCAG 2.1 AA compliance achieved',
+    ],
+    tech: ['Modern Web', 'Accessibility', 'Multi-language', 'Government'],
+    award: 'Team Award',
+    url: 'https://www.lexingtonky.gov/',
+  },
+  {
+    name: 'Metropolitan Water Reclamation District of Greater Chicago',
+    challenge:
+      'Large municipal organization needed accessible website with advanced document management and public education features',
+    myRole:
+      'Developed responsive front-end templates and implemented accessibility enhancements as key contributor to agency team',
+    results: [
+      'Team earned Pinnacle Award - NAGW',
+      'Comprehensive accessibility compliance delivered',
+      'Improved public access to environmental data',
+      'Enhanced storytelling features for community',
+    ],
+    tech: ['Accessibility', 'Government', 'Document Management'],
+    award: 'Team Award',
+    url: 'https://mwrd.org/',
+  },
+  {
+    name: 'Johnson County, Kansas',
+    challenge:
+      'County website needed complete redesign focused on resident usability and streamlined content access',
+    myRole:
+      'Rebuilt front-end architecture with performance optimizations and conducted extensive cross-browser testing as part of development team',
+    results: [
+      'Significantly improved page load times',
+      'Enhanced mobile experience for 500k+ residents',
+      'Positive community feedback',
+      'Streamlined access to county services',
+    ],
+    tech: ['Performance', 'UX', 'Government'],
+    url: 'https://www.jocogov.org/',
+  },
+  {
+    name: 'D.C. Public Library',
+    challenge:
+      'Library system needed modern digital presence to improve patron access to resources and services',
+    myRole:
+      'Built front-end component library and conducted comprehensive accessibility audit as contributor to agency team',
+    results: [
+      'Enhanced navigation and content discovery',
+      'Increased engagement with library resources',
+      'Modern, accessible user interface delivered',
+      'Reusable component system for future development',
+    ],
+    tech: ['Component Library', 'Accessibility', 'React'],
+    url: 'https://www.dclibrary.org/',
+  },
+];
+---
+<section
+  id="portfolio"
+  class="bg-white py-12 md:py-20"
+  aria-labelledby="portfolio-heading"
+>
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <!-- Section header -->
+    <div class="mx-auto max-w-3xl pb-12 text-center md:pb-16">
+      <h2
+        id="portfolio-heading"
+        class="mb-4 text-3xl font-bold text-gray-900 md:text-4xl"
+      >
+        Recent Work
+      </h2>
+      <p class="text-lg text-gray-600">
+        Selected projects I contributed to as Senior Engineer with leading
+        digital agencies. Each collaboration solved specific business
+        challenges and delivered measurable results.
+      </p>
+    </div>
+
+    <!-- Case studies grid -->
+    <div class="grid gap-10 md:grid-cols-2">
+      {projects.map((project, index) => (
+        <article
+          class="group rounded-xl border border-gray-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
+          aria-labelledby={`project-${index}-title`}
+        >
+          <!-- Award badge if applicable -->
+          {project.award && (
+            <div class="mb-4 inline-flex items-center rounded-full bg-yellow-100 px-3 py-1 text-sm font-medium text-yellow-800">
+              <svg
+                class="mr-2 h-4 w-4"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                aria-hidden="true"
+              >
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+              </svg>
+              {project.award}
+            </div>
+          )}
+
+          <!-- Project name -->
+          <h3
+            id={`project-${index}-title`}
+            class="mb-3 text-xl font-semibold text-gray-900"
+          >
+            {project.name}
+          </h3>
+
+          <!-- Challenge -->
+          <div class="mb-4">
+            <p class="text-sm font-medium text-gray-700 mb-1">Challenge:</p>
+            <p class="text-gray-600">{project.challenge}</p>
+          </div>
+
+          <!-- My Role -->
+          <div class="mb-4">
+            <p class="text-sm font-medium text-gray-700 mb-1">My Role:</p>
+            <p class="text-gray-600">{project.myRole}</p>
+          </div>
+
+          <!-- Results -->
+          <div class="mb-4">
+            <p class="text-sm font-medium text-gray-700 mb-2">Results:</p>
+            <ul class="space-y-1 text-gray-600">
+              {project.results.map((result) => (
+                <li class="flex items-start">
+                  <svg
+                    class="mr-2 mt-0.5 h-5 w-5 flex-shrink-0 text-green-600"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+                  {result}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <!-- Tech tags -->
+          <div class="mb-4 flex flex-wrap gap-2">
+            {project.tech.map((tag) => (
+              <span class="inline-flex items-center rounded-full bg-blue-100 px-2.5 py-0.5 text-xs font-medium text-blue-800">
+                {tag}
+              </span>
+            ))}
+          </div>
+
+          <!-- View Live Site link - only when URL is set -->
+          {project.url && project.url !== '#' ?
+            <a
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center text-sm font-semibold text-blue-600 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
+              aria-label={`View live site for ${project.name}`}
+            >
+              View Live Site →
+              <svg
+                class="ml-1 h-4 w-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                ></path>
+              </svg>
+            </a>
+          : <span class="inline-flex items-center text-sm font-semibold text-gray-500">
+              View Live Site →
+              <svg
+                class="ml-1 h-4 w-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                ></path>
+              </svg>
+            </span>
+          }
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
