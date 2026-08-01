@@ -1,0 +1,170 @@
+/* JFM Digital Works Brand Styles */
+
+/* Critical CSS - Above the fold styles */
+.hero-critical {
+  background-color: #f8fafc;
+  color: #1e293b;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Screen reader only utility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Color variables - updated for accessibility */
+:root {
+  --jfm-base: #f8fafc;
+  --jfm-heading: #1e293b;
+  --jfm-tech-blue: #1a73e8; /* Updated for better contrast */
+  --jfm-tech-blue-light: #4285f4;
+  --jfm-tech-blue-dark: #1557b3; /* Darker for hover */
+  --jfm-accent: #10b981;
+  --jfm-section: #f1f5f9;
+}
+
+/* Fix for H1 font-size deprecation warning */
+h1 {
+  font-size: 2rem !important; /* Mobile size */
+}
+
+/* Allow Tailwind text size classes to override */
+h1.text-5xl {
+  font-size: 2.5rem !important; /* Mobile size for text-5xl */
+}
+
+h1.text-4xl {
+  font-size: 2rem !important; /* Mobile size for text-4xl */
+}
+
+h1.text-3xl {
+  font-size: 1.75rem !important; /* Mobile size for text-3xl */
+}
+
+/* Desktop sizes */
+@media (min-width: 768px) {
+  h1 {
+    font-size: 2.5rem !important; /* Desktop default */
+  }
+
+  h1.text-5xl {
+    font-size: 3.5rem !important; /* Desktop text-5xl */
+  }
+
+  h1.text-4xl {
+    font-size: 2.75rem !important; /* Desktop text-4xl */
+  }
+
+  h1.text-3xl {
+    font-size: 2.25rem !important; /* Desktop text-3xl */
+  }
+}
+
+/* Brand button styles - enhanced for accessibility */
+.btn-jfm-primary {
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--jfm-tech-blue);
+  color: white;
+  transition: all 0.3s ease;
+  border: 0; /* Remove border for better contrast */
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.btn-jfm-primary:hover {
+  background-color: var(--jfm-tech-blue-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.btn-jfm-primary:focus {
+  outline: none;
+  ring: 2px solid var(--jfm-tech-blue);
+  ring-offset: 2px;
+}
+
+.btn-jfm-secondary {
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  color: var(--jfm-heading);
+  border: 2px solid var(--jfm-tech-blue); /* Thicker border for better visibility */
+  transition: all 0.3s ease;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.btn-jfm-secondary:hover {
+  background-color: var(--jfm-tech-blue);
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.btn-jfm-secondary:focus {
+  outline: none;
+  ring: 2px solid var(--jfm-tech-blue);
+  ring-offset: 2px;
+}
+
+/* Text colors */
+.text-jfm-heading {
+  color: var(--jfm-heading);
+}
+
+.text-jfm-tech-blue {
+  color: var(--jfm-tech-blue);
+}
+
+.text-jfm-accent {
+  color: var(--jfm-accent);
+}
+
+/* Background colors */
+.bg-jfm-base {
+  background-color: var(--jfm-base);
+}
+
+.bg-jfm-section {
+  background-color: var(--jfm-section);
+}
+
+/* Smooth transitions for interactive elements */
+.transition-jfm {
+  transition: all 0.3s ease;
+}
+
+/* Custom scrollbar for brand consistency */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--jfm-base);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--jfm-tech-blue);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--jfm-tech-blue-dark);
+}

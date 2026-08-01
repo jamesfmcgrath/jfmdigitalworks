@@ -1,0 +1,7 @@
+<!-- This is a placeholder for a 192x192 PNG icon -->
+<!-- In a real implementation, replace with actual icon files -->
+<!-- For now, using an SVG placeholder -->
+<svg width="192" height="192" viewBox="0 0 192 192" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="192" height="192" fill="#6366f1"/>
+  <text x="96" y="100" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="24" font-weight="bold">JFM</text>
+</svg>

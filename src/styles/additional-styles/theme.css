@@ -1,0 +1,33 @@
+/* JFM Digital Works Brand Colors */
+.text-jfm-charcoal {
+  color: #0e1116;
+}
+
+.text-jfm-blue {
+  color: #1e90ff;
+}
+
+.text-jfm-muted {
+  color: #94a3b8;
+}
+
+.bg-jfm-charcoal {
+  background-color: #0e1116;
+}
+
+.bg-jfm-blue {
+  background-color: #1e90ff;
+}
+
+.bg-jfm-light {
+  background-color: #f1f5f9;
+}
+
+.border-jfm-blue {
+  border-color: #1e90ff;
+}
+
+/* Scrollspy links */
+[data-scrollspy-link].scrollspy-active {
+  @apply text-blue-500 font-medium;
+}

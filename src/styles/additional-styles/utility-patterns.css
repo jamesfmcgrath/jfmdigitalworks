@@ -1,0 +1,137 @@
+/* Buttons */
+.btn,
+.btn-sm {
+  @apply text-sm font-medium inline-flex items-center justify-center rounded-lg whitespace-nowrap transition-all;
+}
+
+.btn {
+  @apply px-4 py-[11px] shadow-lg;
+}
+
+.btn-sm {
+  @apply px-3 py-[5px] shadow-sm;
+}
+
+/* Accessible button styles */
+.btn-accessible {
+  @apply bg-accessible-blue text-accessible-text-light;
+  @apply hover:bg-accessible-blue-hover;
+  @apply focus:ring-2 focus:ring-accessible-blue focus:ring-offset-2;
+  @apply border-0; /* Remove border for better contrast */
+}
+
+/* Forms */
+input[type='search']::-webkit-search-decoration,
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-results-button,
+input[type='search']::-webkit-search-results-decoration {
+  -webkit-appearance: none;
+}
+
+.form-input,
+.form-textarea,
+.form-multiselect,
+.form-select,
+.form-checkbox,
+.form-radio {
+  @apply border border-gray-200 shadow-xs rounded-lg focus:ring-0 focus:ring-offset-0;
+}
+
+.form-input,
+.form-textarea,
+.form-multiselect,
+.form-select {
+  @apply bg-white text-sm py-2.5 px-4 focus:border-accessible-blue focus:ring-accessible-blue;
+  @apply text-gray-800; /* Ensure dark text for contrast */
+}
+
+.form-input,
+.form-textarea {
+  @apply placeholder-gray-400;
+}
+
+.form-select {
+  @apply pr-10;
+}
+
+.form-checkbox,
+.form-radio {
+  @apply text-gray-800 checked:bg-blue-500 checked:border-transparent focus-visible:not-checked:border-blue-300;
+}
+
+.form-checkbox {
+  @apply rounded-xs;
+}
+
+/* Enhanced form input accessibility */
+.form-input-accessible {
+  @apply border-gray-300 focus:border-accessible-blue focus:ring-accessible-blue;
+  @apply text-gray-800 bg-white;
+}
+
+/* High contrast text utilities */
+.text-accessible-high-contrast {
+  @apply text-gray-800;
+  text-shadow: none; /* Remove any text shadows that might reduce contrast */
+}
+
+/* Accessible link styles */
+.link-accessible {
+  @apply text-accessible-blue hover:text-accessible-blue-hover;
+  @apply underline underline-offset-2;
+  @apply focus:ring-2 focus:ring-accessible-blue focus:ring-offset-2 focus:rounded-sm;
+}
+
+/* Enhanced focus styles for accessibility */
+.form-input:focus,
+.form-textarea:focus,
+.form-multiselect:focus,
+.form-select:focus {
+  @apply ring-2 ring-accessible-blue ring-offset-2;
+  @apply outline-none;
+  @apply border-accessible-blue;
+}
+
+/* Ensure proper focus indicators for checkboxes and radio buttons */
+.form-checkbox:focus,
+.form-radio:focus {
+  @apply ring-2 ring-accessible-blue ring-offset-2;
+  @apply outline-none;
+}
+
+/* Terminal text colors for accessibility */
+.terminal-prompt {
+  color: var(--color-terminal-green);
+}
+
+.terminal-command {
+  color: var(--color-terminal-white);
+}
+
+.terminal-info {
+  color: var(--color-terminal-blue);
+}
+
+.terminal-success {
+  color: var(--color-terminal-green);
+}
+
+.terminal-warning {
+  color: var(--color-terminal-yellow);
+}
+
+.terminal-deploy {
+  color: var(--color-terminal-cyan);
+}
+
+.terminal-ai {
+  color: #a855f7; /* Purple for AI responses */
+}
+
+.terminal-developer {
+  color: #f59e0b; /* Orange for developer messages */
+}
+
+.terminal-metric {
+  color: #10b981; /* Green for metrics */
+}
