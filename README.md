@@ -1,35 +1,26 @@
 # JFM Digital Works
 
-Static site built with [Astro](https://astro.build/) and Tailwind CSS.
+Static marketing site (Astro). Reference Next.js archive: `jfmdigitalworksv1`.
 
-Requires **Node.js 22+** (see `.nvmrc`; run `nvm use` before install/build).
-
-## Development
+## Develop
 
 ```bash
-nvm use
 pnpm install
+cp .env.example .env   # set PUBLIC_WEB3FORMS_KEY
 pnpm dev
 ```
 
-## Build
+## Test / build
 
 ```bash
+pnpm test
 pnpm build
 pnpm preview
 ```
 
-## Scripts
+## Deploy to Hostinger
 
-| Command | Description |
-| --- | --- |
-| `pnpm dev` | Start dev server |
-| `pnpm build` | Build static site to `dist/` |
-| `pnpm preview` | Preview production build |
-| `pnpm check` | Run Astro type check |
-| `pnpm test` | Run tests once |
-| `pnpm test:watch` | Run tests in watch mode |
-
-## Environment
-
-Copy `.env.example` to `.env` and set `PUBLIC_WEB3FORMS_KEY` for the contact form (added in a later task).
+1. Set `PUBLIC_WEB3FORMS_KEY` in the environment used for `pnpm build`
+2. Run `pnpm build`
+3. Upload contents of `dist/` to the Hostinger document root (public_html)
+4. Confirm `/`, mobile nav, contact submit, and 404

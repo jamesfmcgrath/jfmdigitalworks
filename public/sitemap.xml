@@ -7,22 +7,4 @@
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-  <url>
-    <loc>https://jfmdigitalworks.com/signin</loc>
-    <lastmod>2025-07-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://jfmdigitalworks.com/signup</loc>
-    <lastmod>2025-07-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://jfmdigitalworks.com/reset-password</loc>
-    <lastmod>2025-07-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.2</priority>
-  </url>
 </urlset>

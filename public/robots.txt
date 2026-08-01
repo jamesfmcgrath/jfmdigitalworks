@@ -6,11 +6,9 @@ Allow: /
 
 # Disallow sensitive areas
 Disallow: /api/
-Disallow: /_next/
 Disallow: /admin/
 Disallow: /private/
 Disallow: /*.json$
-Disallow: /auth/
 
 # Allow specific static assets
 Allow: /images/
