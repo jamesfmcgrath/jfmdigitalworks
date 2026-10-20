@@ -7,6 +7,9 @@ const services = [
   'Drupal upgrades',
   'Support partner',
 ];
+
+// Evaluated at build time.
+const year = new Date().getFullYear();
 ---
 <footer role="contentinfo" class="bg-gray-800 text-white">
   <div class="mx-auto max-w-6xl px-4 sm:px-6">
@@ -63,7 +66,7 @@ const services = [
     <div class="border-t border-gray-700 py-4">
       <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
         <p class="text-sm text-gray-400">
-          &copy; 2026 JFM Digital Works. All rights reserved.
+          &copy; {year} JFM Digital Works. All rights reserved.
         </p>
         <div class="flex gap-4">
           <a
