@@ -8,17 +8,17 @@ interface Props {
 
 const title =
   Astro.props.title ??
-  'Fast Web Development for Growing Businesses | JFM Digital Works';
+  'LocalGov Drupal and Accessibility Developer, Ireland | JFM Digital Works';
 const description =
   Astro.props.description ??
-  'Secure, accessible web development with 100+ projects delivered. Drupal, React, WordPress expertise. WCAG compliance guaranteed. Based in Ireland, serving EU. Free discovery call.';
+  'Drupal and LocalGov Drupal developer in Mayo. Accessibility audits and fixes to WCAG 2.2 AA for councils and public bodies in Ireland and the UK.';
 
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'ProfessionalService',
   name: 'JFM Digital Works',
   description:
-    'Web development, security audits, and accessibility services for enterprise and government',
+    'LocalGov Drupal development and web accessibility services for councils and public-sector organisations in Ireland and the UK',
   url: 'https://jfmdigitalworks.com',
   telephone: '+353-87-399-9751',
   email: 'hello@jfmdigitalworks.com',
@@ -41,16 +41,19 @@ const jsonLd = {
   priceRange: '€€€',
   knowsAbout: [
     'Drupal Development',
+    'LocalGov Drupal',
     'React Development',
-    'WordPress Development',
     'Web Accessibility',
-    'WCAG Compliance',
-    'Web Security',
+    'WCAG 2.2',
+    'EN 301 549',
+    'EU Web Accessibility Directive',
+    'European Accessibility Act',
     'Platform Migration',
   ],
   sameAs: [
     'https://www.linkedin.com/in/james-mcgrath-web-development',
     'https://github.com/jamesfmcgrath',
+    'https://www.drupal.org/u/jamesfmcgrath',
   ],
 };
 ---
@@ -61,10 +64,6 @@ const jsonLd = {
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <meta
-      name="keywords"
-      content="web developer Ireland, Drupal developer, accessibility audit, security audit, WCAG compliance, emergency web developer, web development Ireland, Drupal developer Ireland, fix drupal security issues Ireland, migrate drupal 7 to drupal 11, wordpress security audit Ireland"
-    />
     <link rel="canonical" href="https://jfmdigitalworks.com" />
     <meta name="theme-color" content="#6366f1" />
     <meta name="color-scheme" content="light dark" />
@@ -72,11 +71,8 @@ const jsonLd = {
     <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="192x192" href="/images/android-chrome-192x192.png" />
     <link rel="icon" type="image/png" sizes="512x512" href="/images/android-chrome-512x512.png" />
-    <meta property="og:title" content="Fast Web Development | JFM Digital Works" />
-    <meta
-      property="og:description"
-      content="100+ projects delivered. Drupal, React, WordPress. WCAG compliance. Based in Ireland."
-    />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
     <meta property="og:url" content="https://jfmdigitalworks.com" />
     <meta property="og:site_name" content="JFM Digital Works" />
     <meta property="og:locale" content="en_IE" />
@@ -85,11 +81,8 @@ const jsonLd = {
     <meta property="og:image:width" content="1024" />
     <meta property="og:image:height" content="1024" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Fast Web Development | JFM Digital Works" />
-    <meta
-      name="twitter:description"
-      content="100+ projects delivered. Drupal, React, WordPress expertise."
-    />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content="https://jfmdigitalworks.com/images/og-preview.png" />
     <link rel="preconnect" href="https://api.web3forms.com" />
     <link rel="dns-prefetch" href="https://api.web3forms.com" />

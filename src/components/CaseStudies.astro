@@ -1,61 +1,123 @@
 ---
-const projects = [
+interface ProjectLink {
+  label: string;
+  url: string;
+}
+
+interface Project {
+  name: string;
+  challenge: string;
+  myRole: string;
+  resultsNote?: string;
+  results: string[];
+  tech: string[];
+  award?: string;
+  url?: string;
+  links?: ProjectLink[];
+}
+
+const projects: Project[] = [
   {
-    name: 'Lexington-Fayette Urban Council Government',
+    name: 'Tipperary County Council',
+    challenge:
+      'Bilingual English and Irish LocalGov Drupal site of about 7,500 pages needed an accessibility remediation programme.',
+    myRole:
+      'Delivered through The Confident in 2026. Prioritised template-level fixes; built a custom module that redirects untranslated Irish-language pages to English and shows the language switcher only when a translation exists; fixed colour contrast on banners and road alerts; moved CSS out of Asset Injector into the theme; generated accessible names for map markers from popup, tooltip or title data.',
+    resultsNote:
+      'Pages affected, Acquia Web Governance scans, Feb to Mar 2026. Further work is in progress.',
+    // TODO(James): add NDA score before/after when the new report arrives.
+    results: [
+      'Links missing an accessible name: 3,000 to 12',
+      'Map marker buttons missing an accessible name: 1,652 to 37',
+      'Images missing alt text: 1,705 to 73',
+      'Links inside text hard to identify: 7,375 to 1,238',
+      'Empty breadcrumb links removed',
+    ],
+    tech: ['LocalGov Drupal', 'Accessibility', 'Bilingual', 'Custom module'],
+    url: 'https://www.tipperarycoco.ie/',
+  },
+  {
+    name: 'LocalGov Bus Data',
+    challenge:
+      'Cumberland Council wanted to publish UK bus timetables on its LocalGov Drupal site from open data feeds.',
+    myRole:
+      'Built the module and co-maintain it, delivered through The Confident in 2026. Funded by Cumberland Council as part of the LocalGov Drupal initiative.',
+    results: [
+      'Open-source module for Drupal 10 and 11',
+      'Imports timetables from GTFS feeds and enriches stops from NaPTAN',
+      'Exposes timetables as Drupal entities and Views',
+      'Stable release covered by the Drupal Security Team',
+      'Live on the Cumberland Council website',
+    ],
+    tech: ['LocalGov Drupal', 'Open source', 'GTFS', 'NaPTAN'],
+    links: [
+      {
+        label: 'View project on drupal.org',
+        url: 'https://www.drupal.org/project/localgov_bus_data',
+      },
+      {
+        label: 'View live site',
+        url: 'https://www.cumberland.gov.uk/parking-roads-and-transport/bus-services/buses',
+      },
+    ],
+  },
+  {
+    name: 'Lexington-Fayette Urban County Government',
     challenge:
       'City of 300k+ residents needed multilingual site with significantly improved search functionality',
     myRole:
-      'Led front-end implementation including accessibility testing, design system integration, and advanced search architecture as part of agency team',
+      'Led front-end implementation, accessibility testing, design-system integration and site search as part of the Interpersonal Frequency team',
     results: [
-      'Team earned Gold - 2025 dotCOMM Awards',
-      '140% improvement in site search performance',
+      'NAGW 2025 Pinnacle Members\' Choice (team award)',
+      '2025 dotCOMM Gold (team award)',
+      '2025 Government Experience Award (team award)',
+      '140% increase in search result click-through',
       'Multi-language support delivered',
-      'Full WCAG 2.1 AA compliance achieved',
     ],
     tech: ['Modern Web', 'Accessibility', 'Multi-language', 'Government'],
-    award: 'Team Award',
+    award: 'Team award',
     url: 'https://www.lexingtonky.gov/',
-  },
-  {
-    name: 'Metropolitan Water Reclamation District of Greater Chicago',
-    challenge:
-      'Large municipal organization needed accessible website with advanced document management and public education features',
-    myRole:
-      'Developed responsive front-end templates and implemented accessibility enhancements as key contributor to agency team',
-    results: [
-      'Team earned Pinnacle Award - NAGW',
-      'Comprehensive accessibility compliance delivered',
-      'Improved public access to environmental data',
-      'Enhanced storytelling features for community',
-    ],
-    tech: ['Accessibility', 'Government', 'Document Management'],
-    award: 'Team Award',
-    url: 'https://mwrd.org/',
   },
   {
     name: 'Johnson County, Kansas',
     challenge:
       'County website needed complete redesign focused on resident usability and streamlined content access',
     myRole:
-      'Rebuilt front-end architecture with performance optimizations and conducted extensive cross-browser testing as part of development team',
+      'Rebuilt front-end architecture with performance work and conducted extensive cross-browser testing as part of the Interpersonal Frequency team',
+    // TODO(James): restore "Positive community feedback" only with a source.
     results: [
-      'Significantly improved page load times',
+      'NAGW Pinnacle 2022 Best of Show (team award)',
+      'NAGW Pinnacle 2023 Best in Show (team award)',
       'Enhanced mobile experience for 500k+ residents',
-      'Positive community feedback',
       'Streamlined access to county services',
     ],
     tech: ['Performance', 'UX', 'Government'],
+    award: 'Team award',
     url: 'https://www.jocogov.org/',
+  },
+  {
+    name: 'Metropolitan Water Reclamation District of Greater Chicago',
+    challenge:
+      'Large municipal organisation needed accessible website with advanced document management and public education features',
+    myRole:
+      'Built responsive front-end templates and accessibility enhancements as part of the Interpersonal Frequency team',
+    results: [
+      'NAGW 2024 Pinnacle and Members\' Choice awards (team awards)',
+      'Improved public access to environmental data',
+      'Enhanced storytelling features for community',
+    ],
+    tech: ['Accessibility', 'Government', 'Document Management'],
+    award: 'Team award',
+    url: 'https://mwrd.org/',
   },
   {
     name: 'D.C. Public Library',
     challenge:
       'Library system needed modern digital presence to improve patron access to resources and services',
     myRole:
-      'Built front-end component library and conducted comprehensive accessibility audit as contributor to agency team',
+      'Built front-end component library and conducted accessibility audit as part of the Interpersonal Frequency team',
     results: [
       'Enhanced navigation and content discovery',
-      'Increased engagement with library resources',
       'Modern, accessible user interface delivered',
       'Reusable component system for future development',
     ],
@@ -63,6 +125,13 @@ const projects = [
     url: 'https://www.dclibrary.org/',
   },
 ];
+
+// Projects with a single URL get one "View live site" link.
+const linksFor = (project: Project): ProjectLink[] =>
+  project.links ??
+  (project.url && project.url !== '#'
+    ? [{ label: 'View live site', url: project.url }]
+    : []);
 ---
 <section
   id="portfolio"
@@ -79,9 +148,10 @@ const projects = [
         Recent Work
       </h2>
       <p class="text-lg text-gray-600">
-        Selected projects I contributed to as Senior Engineer with leading
-        digital agencies. Each collaboration solved specific business
-        challenges and delivered measurable results.
+        Current work for Irish and UK councils, including Tipperary County
+        Council and LocalGov Bus Data, is delivered through The Confident.
+        Earlier projects were with Interpersonal Frequency, a US agency, where
+        I was front-end lead on government and civic Drupal sites.
       </p>
     </div>
 
@@ -130,6 +200,9 @@ const projects = [
           <!-- Results -->
           <div class="mb-4">
             <p class="text-sm font-medium text-gray-700 mb-2">Results:</p>
+            {project.resultsNote && (
+              <p class="mb-2 text-sm text-gray-600">{project.resultsNote}</p>
+            )}
             <ul class="space-y-1 text-gray-600">
               {project.results.map((result) => (
                 <li class="flex items-start">
@@ -160,49 +233,36 @@ const projects = [
             ))}
           </div>
 
-          <!-- View Live Site link - only when URL is set -->
-          {project.url && project.url !== '#' ?
-            <a
-              href={project.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-flex items-center text-sm font-semibold text-blue-600 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
-              aria-label={`View live site for ${project.name}`}
-            >
-              View Live Site →
-              <svg
-                class="ml-1 h-4 w-4"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                ></path>
-              </svg>
-            </a>
-          : <span class="inline-flex items-center text-sm font-semibold text-gray-500">
-              View Live Site →
-              <svg
-                class="ml-1 h-4 w-4"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                ></path>
-              </svg>
-            </span>
-          }
+          <!-- Project links (external, open in a new tab) -->
+          {linksFor(project).length > 0 && (
+            <div class="flex flex-wrap gap-x-6 gap-y-2">
+              {linksFor(project).map((link) => (
+                <a
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center text-sm font-semibold text-blue-600 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
+                >
+                  {link.label}
+                  <span class="sr-only"> for {project.name} (opens in new tab)</span>
+                  <svg
+                    class="ml-1 h-4 w-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                    ></path>
+                  </svg>
+                </a>
+              ))}
+            </div>
+          )}
         </article>
       ))}
     </div>

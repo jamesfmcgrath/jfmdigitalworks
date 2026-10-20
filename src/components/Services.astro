@@ -1,79 +1,50 @@
 ---
 const services = [
   {
-    iconPath: 'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4',
-    name: 'Rapid Web Development',
-    for: 'Startups and SMEs needing fast time-to-market without compromising quality',
-    deliverables: [
-      'Modern web applications (Drupal, React, WordPress)',
-      '40% faster delivery via AI-assisted workflows',
-      'Mobile-first responsive design',
-      'Security best practices built-in',
-      '30-day post-launch support',
-    ],
-    whyNow: 'Every week of delay is lost revenue and competitive advantage. Fast execution = faster validation.',
-    timeline: 'Most projects delivered in 4-8 weeks',
-  },
-  {
-    iconPath: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z',
-    name: 'Security & Compliance Audits',
-    for: 'Organizations facing regulatory requirements, recent security concerns, or preparing for audits',
-    deliverables: [
-      'Comprehensive security assessment',
-      'Vulnerability identification and prioritization',
-      'Detailed remediation recommendations',
-      'Compliance documentation (GDPR, WCAG, etc.)',
-      'Executive summary for stakeholders',
-    ],
-    whyNow: 'Fines for non-compliance can reach millions. Reputational damage from breaches is permanent.',
-    timeline: 'Audits completed in 1-2 weeks, remediation timeline varies by scope',
-  },
-  {
     iconPath: 'M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z',
-    name: 'Accessibility Remediation',
-    for: 'Businesses, healthcare, education, and government organizations with WCAG requirements',
+    name: 'Accessibility audits and remediation',
+    for: 'Councils and public bodies working to WCAG 2.2 AA, and organisations preparing for the European Accessibility Act',
     deliverables: [
-      'Full accessibility audit (automated + manual testing)',
-      'Code fixes for WCAG 2.1 AA/AAA compliance',
-      'Accessibility documentation',
-      'Team training on accessibility best practices',
-      'Ongoing compliance monitoring setup',
+      'Audit to WCAG 2.2 AA and EN 301 549, combining manual testing with assistive technology and automated scans',
+      'Prioritised remediation report',
+      'Code fixes, starting with templates and shared components',
+      'Guidance for content editors',
+      'Help preparing for NDA monitoring and your accessibility statement',
     ],
-    whyNow: '70% of websites fail basic accessibility tests. Legal risk is real and growing.',
-    timeline: 'Most sites remediated in 2-4 weeks',
+    whyNow: 'Public bodies are monitored under the EU Web Accessibility Directive, transposed in Ireland as S.I. 358/2020. The European Accessibility Act has applied to many private-sector services since 28 June 2025.',
+    timeline: 'Audits completed in 1 to 2 weeks, remediation timeline varies by scope',
+  },
+  {
+    iconPath: 'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4',
+    name: 'LocalGov Drupal development',
+    for: 'Councils running LocalGov Drupal, and the agencies that support them',
+    deliverables: [
+      'New features for LocalGov Drupal sites',
+      'Custom and contributed modules, such as LocalGov Bus Data',
+      'Theme work and front-end components',
+      'Integrations with open data feeds and third-party services',
+    ],
+    whyNow: 'Features built as LocalGov Drupal modules can be reused by other councils, so work funded by one council can benefit many.',
+    timeline: 'Scoped and agreed per feature at proposal stage',
   },
   {
     iconPath: 'M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15',
-    name: 'Platform Modernization',
-    for: 'Companies stuck on legacy Drupal 7, outdated WordPress, or aging custom systems',
+    name: 'Drupal upgrades and modernisation',
+    for: 'Organisations on Drupal 7, or on older Drupal 9 or 10 sites',
     deliverables: [
-      'Migration to modern platform (Drupal 11, latest WordPress, or custom)',
-      'Data migration with zero loss',
-      'Design refresh (optional)',
+      'Upgrade or migration to Drupal 11',
+      'Content migration, with test migrations and content checks before launch',
+      'Theming with Single Directory Components (SDC)',
       'Team training and documentation',
       '30-day post-migration support',
     ],
-    whyNow: 'Security vulnerabilities multiply daily. Maintenance costs increase. Modern features blocked.',
-    timeline: '6-12 weeks depending on complexity',
-  },
-  {
-    iconPath: 'M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.732-.833-2.5 0L3.34 16.5c-.77.833.192 2.5 1.732 2.5z',
-    name: 'Emergency Technical Rescue',
-    for: 'Teams facing production issues, failed audits, critical bugs, or system failures',
-    deliverables: [
-      'Rapid diagnosis (usually within hours)',
-      'Critical issue resolution',
-      'Documentation of what went wrong',
-      'Prevention recommendations',
-      'Temporary or permanent fix options',
-    ],
-    whyNow: 'Every hour of downtime = lost revenue, reputation damage, and user frustration.',
-    timeline: 'Initial response within 24 hours, resolution depends on issue complexity',
+    whyNow: 'Older Drupal versions lose community security support. Planning the upgrade early avoids a rushed migration.',
+    timeline: '6 to 12 weeks depending on complexity',
   },
   {
     iconPath: 'M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z',
-    name: 'Ongoing Development Partner',
-    for: 'Organizations needing reliable technical capacity without full-time hire overhead',
+    name: 'Ongoing support partner',
+    for: 'Organisations needing reliable technical capacity without full-time hire overhead',
     deliverables: [
       'Monthly retainer for predictable capacity',
       'Feature development, maintenance, monitoring',
@@ -82,7 +53,7 @@ const services = [
       'No long-term contract required',
     ],
     whyNow: 'Flexibility without recruiting costs. Continuity without employment overhead.',
-    timeline: 'Month-to-month engagement, typically 20-40 hours/month',
+    timeline: 'Month-to-month engagement, typically 20 to 40 hours/month',
   },
 ];
 ---
@@ -103,7 +74,7 @@ const services = [
     </div>
 
     <!-- Services grid -->
-    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+    <div class="grid gap-8 sm:grid-cols-2">
       {services.map((service) => (
         <div class="flex flex-col rounded-xl border border-gray-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
           <!-- Icon -->
